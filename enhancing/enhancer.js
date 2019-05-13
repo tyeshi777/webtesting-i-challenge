@@ -8,7 +8,7 @@ module.exports = {
 function succeed(item) {
   let enhancement = item.enhancement;
 
-  enhancement >= 0 && enhancement < 20 ? (enhancement += 1) : enhancement;
+  enhancement > 0 && enhancement < 20 ? (enhancement += 1) : enhancement;
   return { ...item, enhancement: enhancement };
 }
 
@@ -23,7 +23,9 @@ function fail(item) {
 }
 
 function repair(item) {
-  return { ...item };
+  item.durability = 100;
+  const newItem = item;
+  return { ...newItem };
 }
 
 function get(item) {
