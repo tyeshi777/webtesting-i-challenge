@@ -47,4 +47,16 @@ describe("enhancer.js", () => {
       expect(actual.durability).toBe(100);
     });
   });
+  describe("get() method", () => {
+    it("adds a + and enhancement before name", () => {
+      const item = {
+        name: "Robert Mueller",
+        enhancement: 5
+      };
+      const actual = enhancer.get(item);
+
+      expect(actual.name).toBe(actual.name);
+      console.log("ACTUAL NAME", actual.name);
+    });
+  });
 });
